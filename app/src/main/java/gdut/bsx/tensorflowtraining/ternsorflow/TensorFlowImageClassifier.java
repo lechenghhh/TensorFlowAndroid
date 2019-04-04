@@ -36,7 +36,7 @@ import gdut.bsx.tensorflowtraining.ternsorflow.Classifier;
 
 /** A classifier specialized to label images using TensorFlow. */
 public class TensorFlowImageClassifier implements Classifier {
-    private static final String TAG = "TensorFlowImageClassifier";
+    private static final String TAG = "Classifier";
 
     // Only return this many results with at least this confidence.
     private static final int MAX_RESULTS = 3;
@@ -129,12 +129,12 @@ public class TensorFlowImageClassifier implements Classifier {
 
     @Override
     public List<Recognition> recognizeImage(final Bitmap bitmap) {
-        // Log this method so that it can be analyzed with systrace.
+        // Log this method so that it can be analyzed with systrace 记录此方法，以便使用Systrace进行分析
         Trace.beginSection("recognizeImage");
 
         Trace.beginSection("preprocessBitmap");
-        // Preprocess the image data from 0-255 int to normalized float based
-        // on the provided parameters.
+        // Preprocess the image data from 0-255 int to normalized float based  on the provided parameters
+        // 根据提供的参数将图像数据从0-255 int预处理为标准化浮点
         bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
         for (int i = 0; i < intValues.length; ++i) {
             final int val = intValues[i];

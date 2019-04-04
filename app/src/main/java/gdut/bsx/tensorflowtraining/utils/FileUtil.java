@@ -1,4 +1,4 @@
-package gdut.bsx.tensorflowtraining;
+package gdut.bsx.tensorflowtraining.utils;
 
 import android.content.Context;
 import android.media.MediaScannerConnection;
